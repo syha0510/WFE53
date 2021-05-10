@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+</head>
+<style>
+	*{
+		margin: 0;
+
+	}
+	.container{
+		width: 600px;
+    height: 300px;
+    background-color: pink;
+	}
+	#title{
+		margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    padding-right: 85px;
+    border: none;
+    margin-left: 45px;
+	}
+	#add{
+	margin-left: -4px;
+    height: 32px;
+    font-family: monospace;
+    font-weight: bold;
+    border: none;
+	}
+	.item {
+	width: 381px;
+    height: 40px;
+    background-color: grey;
+    margin-left: 45px;
+    position: relative;
+    line-height: 40px;
+	}
+	.right{
+		position: absolute;
+		left: 0;
+	}
+	.remove{
+		position: absolute;
+		right: 5px;
+	}
+	.p{
+		text-align: center;
+    font-size: 20px;
+    font-family: segoe ui light;
+    font-weight: bold;
+	}
+</style>
+<body>
+	<center>
+	<div class="container">
+		<p class="p">My To Do List</p>
+		<input type="" name="title" id="title">
+		<button id="add">Add content</button>
+		
+		
+	</div>
+	</center>
+	<script>
+		$(document).ready(function(){
+			$(".container").on("click",".remove",function(){
+				$(this).parent().remove()
+			})
+			
+
+   		$("#add").on("click",function(){
+   			let title=$("#title").val();
+   			if(title.length==0){
+   				alert('Mời nhập lại');
+   			}else{
+   				$(".container").append('<div class="item"><span class="right">'+title+'</span><span class="remove"><i class="fa fa-times" aria-hidden="true"></i></span></div>')
+   			}
+
+   		})
+
+
+		})
+	</script>
+</body>
+</html>
